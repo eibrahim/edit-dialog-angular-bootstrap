@@ -1,5 +1,7 @@
 #Edit Dialog for Bootstrap and Angular
 
+##Demo
+There is no live demo, but you can see the example in the examples folder or take a look at this screenshot http://grab.by/mSMq
 ##Installation
 
 `bower install edit-dialog-angular-bootstrap`
@@ -13,7 +15,7 @@
 
 * see example in the examples folder
 
-#Use
+##Use
 
 Add a dependency in your app on edit-dialog, ui-bootstrap and ngResource
 `var demoApp = angular.module("EditDialogDemo", ['ui.bootstrap', 'edit-dialog', 'ngResource']);`
