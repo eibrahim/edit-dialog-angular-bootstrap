@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo</title>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="http:////netdna.bootstrapcdn.com/bootswatch/2.3.1/flatly/bootstrap.min.css" rel="stylesheet">
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.js'></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src='../components/angular-bootstrap/ui-bootstrap.js'></script>
+    <script type="text/javascript" src='../components/angular-bootstrap/ui-bootstrap-tpls.js'></script>
+
+    <script type="text/javascript" src='../edit_dialog.js'></script>
+    <script type="text/javascript" src='app.js'></script>
+
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+</head>
+<body ng-app="EditDialogDemo">
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Edit Dialog</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <h1>Edit Dialog with Bootstrap & AngularJS </h1>
+    <div ng-controller="DemoController">
+        <a class="btn btn-primary" ng-click="createNewItem()">New Item</a>
+
+        <h2 ng-show="items.length > 0">My Items</h2>
+        <table class="table table-hover">
+            <tr ng-repeat="i in items">
+                <td>
+                    {{i.name}}
+                </td>
+                <td><a class="btn" ng-click="editItem(i)"><i class="icon icon-edit"></i></a></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+<!-- /container -->
+
+<script type="text/ng-template" id="/my-edit.template">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" ng-click="close()" aria-hidden="true">&times;</button>
+        <h1 ng-show="isNew">New Item</h1>
+
+        <h1 ng-hide="isNew">Edit Item</h1>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" ng-submit="" ng-disabled="settings.saving" name='formAddEditItem'>
+
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label" for="name">Name</label>
+
+                    <div class="controls">
+                        <input class="input-xlarge" id="name" type="text" ng-model="model.name"
+                               autofocus="{{settings.focus}}" ng-disabled="settings.saving" ng-required="true">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <i class='halflings-icon refresh' ng-show="settings.saving"></i>
+        <input type="submit" class="btn btn-primary" ng-disabled="settings.saving || formAddEditItem.$invalid"
+               value="Save" ng-click="save()"/>
+        <confirm-button ng-hide="isNew" confirm='delete()' class='pull-left' ng-disabled="settings.saving"></confirm-button>
+    </div>
+</script>
+</body>
+</html>
