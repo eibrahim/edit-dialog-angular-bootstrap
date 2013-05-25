@@ -77,8 +77,17 @@ Notice the confirm-button directive, this is a cool way to delete an object when
 
 It will look something like this http://grab.by/mSMq
 
+You can use it anywhere though.  Simply give it the method to call when delete is confirmed.  For example, if you have a method in your scope called deleteMyItem then you will add the delete button like this
 
+Default button using trash icon
 
+        `<confirm-button confirm='deleteMyItem()'></confirm-button>`
+
+Customize icon using any of the bootstrap icons
+
+        `<confirm-button confirm='deleteMyItem()' icont='icon-ban-circle'></confirm-button>`
+
+This will give you an instant delete button with a confirmation popover.
 
 
 
