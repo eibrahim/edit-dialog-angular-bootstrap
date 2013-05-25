@@ -47,14 +47,14 @@ demoApp.controller("DemoController", function ($scope, $dialog, $resource) {
     $scope.editItem = function (i) {
         var dialog_options = {
             backdrop: true,
-            keyboard: true
-        };
-        dialog_options.resolve = {
-            item: function () {
-                return i;
-            },
-            items: function () {
-                return $scope.items;
+            keyboard: true,
+            resolve: {
+                item: function () {
+                    return i;
+                },
+                items: function () {
+                    return $scope.items;
+                }
             }
         };
         var d = $dialog.dialog(dialog_options);

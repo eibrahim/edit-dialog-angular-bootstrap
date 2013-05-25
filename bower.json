@@ -3,7 +3,5 @@
   "version": "1.0.0",
   "main": "./edit_dialog.js",
   "dependencies": {
-    "angular-resource": "~1.0.6",
-    "angular-bootstrap": "~0.3.0"
   }
 }
