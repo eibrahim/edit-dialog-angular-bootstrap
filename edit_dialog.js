@@ -54,7 +54,6 @@ angular.module('edit-dialog')
             template: "<a id=\"{{my_id}}\" class=\"btn btn-danger confirmation-popover-button\" ng-click=\"show()\" >\n  <i class=\"icon {{icon || 'icon-trash'}}\"></i>\n</a>",
             scope: {
                 confirm: '&',
-                item: '=',
                 icon: '@'
             },
             link: function (scope, elm, attrs) {
