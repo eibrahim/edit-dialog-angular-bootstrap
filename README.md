@@ -1,5 +1,6 @@
 #Edit Dialog for Bootstrap and Angular
 
+NOTE: I haven't done a lot of open source but would like to do more, so if you find this useful, please let me know at http://twitter.com/eibrahim or at http://www.emadibrahim.com - thanks.
 ##Demo
 There is no live demo, but you can see the example in the examples folder or take a look at this screenshot http://grab.by/mSMq
 ##Installation
